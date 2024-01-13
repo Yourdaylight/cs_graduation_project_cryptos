@@ -1,0 +1,111 @@
+.news {
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/bk2.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.news_container {
+  display: flex;
+  width: 80%;
+  margin: 0.5rem auto 1rem auto;
+  align-items: center; /* 修改这里 */
+  border-radius: 1rem;
+  background-color: #ececec;
+  flex-direction: column;
+
+margin-top: 5rem;
+  padding: 1rem;
+}
+
+
+
+.banner {
+  position: relative;
+  width: 80%;
+  height: auto;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.news-text {
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform:translate(-50%, -50%); /* 使文本在父元素中居中 */
+  background-color: rgba(0, 0, 0, 0.7); /* 添加半透明的黑色背景 */
+  padding: 20px; /* 为背景添加一些内边距，使其看起来更美观 */
+  border-radius: 10px; /* 使背景的边角变圆 */
+}
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.news-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  height: 10rem;
+  display: flex;
+  margin-bottom: 2rem;
+border-radius: 2rem;
+  padding: 1rem;
+  background-color: #CCD0D9;
+  align-items: center;
+  cursor: pointer;
+  /* 其他样式保持不变 */
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-delay: 0.5s;
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.date {
+  width: 20%;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  display: flex; /* 使用 Flexbox 布局 */
+  align-items: center; /* 垂直居中 */
+  justify-content: center; /* 水平居中 */
+}
+
+.card-content {
+  width: 80%;
+}
+
+.card-content h2 {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-content p {
+  margin: 0;
+}

@@ -1,0 +1,17 @@
+<div class="news">
+
+<div class="news_container">
+  <div class="details-card" *ngIf="cardDetails">
+    <h1 class="title">{{ cardDetails.title }}</h1>
+    <div class="author-date">
+      <span class="author">{{ cardDetails.author }}</span>
+      <span class="date">{{ cardDetails.date }}</span>
+    </div>
+    <img class="image" [src]="imagePath" alt="Card image">
+    <div class="content">
+      <p>{{cardDetails.content}}</p>
+      <!--          <p *ngFor="let sentence of contentArray">{{ sentence.trim() }}.</p>-->
+    </div>
+  </div>
+</div>
+</div>

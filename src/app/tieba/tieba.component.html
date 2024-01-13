@@ -1,0 +1,41 @@
+<div class="news">
+  <div class="news_container">
+    <div class="banner">
+      <img src="assets/banner2.png" alt="Banner image"/>
+      <div class="news-text">SHARE YOUR MIND</div>
+    </div>
+    <div class="search-box">
+      <input type="text" [(ngModel)]="searchText" placeholder="Search whatever you want"/>
+      <button (click)="searchPost()">Search</button>
+    </div>
+    <div class="post-grid">
+      <div *ngFor="let post of filteredPosts" class="post-card" [ngStyle]="{'background-color': getRandomLightColor(), 'color': getRandomDarkColor()}" (click)="goToPostDetails(post)">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.summary }}</p>
+        <small>{{ post.date | date: 'short' }}</small>
+      </div>
+    </div>
+    <button class="uppost" (click)="openNewPostModal()">Post Your Opinion</button>
+    <!-- 发帖弹框 -->
+    <div *ngIf="showNewPostModal" class="new-post-modal">
+      <h2>What's your opinion</h2>
+      <button (click)="closeNewPostModal()" class="close-button">x</button>
+      <form (submit)="addPost(); $event.preventDefault()">
+        <label>Title:</label>
+        <input [(ngModel)]="newPost.title" name="title" #titleRef="ngModel" required />
+        <div *ngIf="titleRef.invalid && titleRef.touched" class="error-message">Please enter a title</div>
+
+        <label>Abstract:</label>
+        <textarea [(ngModel)]="newPost.summary" name="summary" #summaryRef="ngModel" required></textarea>
+        <div *ngIf="summaryRef.invalid && summaryRef.touched" class="error-message">Please enter an abstract</div>
+
+        <label>Content:</label>
+        <textarea [(ngModel)]="newPost.content" name="content" #contentRef="ngModel" required></textarea>
+        <div *ngIf="contentRef.invalid && contentRef.touched" class="error-message">Please enter content</div>
+
+        <button type="submit" class="submit-button" [disabled]="isFormInvalid()">Post</button>
+      </form>
+    </div>
+    <div *ngIf="showNewPostModal" class="overlay" (click)="closeNewPostModal()"></div>
+  </div>
+</div>

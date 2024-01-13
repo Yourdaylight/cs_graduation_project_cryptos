@@ -1,0 +1,149 @@
+:host {
+  user-select: none;
+}
+.news {
+  width: 100%;
+  min-height: 100%;
+  background-image: url('/assets/bk2.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.news_container {
+  display: flex;
+  width: 80%;
+  min-height: 85vh; /* 添加这个属性 */
+  margin: 0.5rem auto 1rem auto;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(45, 45, 45, 0.8);
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 2rem 2rem 2rem 2rem; /* 增加底部内边距 */
+}
+.post-details {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.post-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.post-summary {
+  font-size: 20px;
+  font-weight: normal;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: justify
+}
+
+.post-content {
+  font-size: 16px;
+  font-weight: normal;
+  color: #333333;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: justify
+}
+
+.post-date {
+  font-size: 14px;
+  color: #999999;
+  margin-bottom: 10px;
+}
+
+.post-likes {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.post-comments-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.post-comments {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comment {
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-text {
+  font-weight: normal;
+}
+.like-emoji {
+  cursor: pointer;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.comment-form input {
+  width: 80%;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.comment-form button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.comment-form button:hover {
+  background-color: #0056b3;
+}
+
+.post-comments {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post-comments li {
+  margin-bottom: 10px;
+}
+
+.post-comments .username {
+  font-weight: bold;
+  color: inherit;
+}

@@ -1,0 +1,28 @@
+<div class="news">
+  <div class="news_container">
+    <h2>User Porfile</h2>
+    <div class="tests">
+    <p>User Name: {{username}}</p>
+    <p>Current Date: {{currentDate}}</p>
+    <p>IP : {{ipAddress}}</p>
+    <p>Language: {{browserLanguage}}</p>
+    </div>
+    <button (click)="openChangePasswordModal()">Change Password</button>
+    <div class="delll" (click)=" deleteuser()">Delete User</div>
+  </div>
+
+  <div *ngIf="isChangePasswordVisible" class="change-password-modal">
+    <h2>Change Your Password</h2>
+    <div class="inpcontainer">
+      <input [(ngModel)]="newPassword" placeholder="New Password">
+      <input [(ngModel)]="confirmNewPassword" placeholder="Confirm Password">
+    </div>
+    <div class="btcontainer">
+      <button (click)="cancelChangePassword()">Cancel</button>
+      <button (click)="changePassword()"
+              [disabled]="!newPassword || !confirmNewPassword || newPassword !== confirmNewPassword">Modify
+      </button>
+    </div>
+  </div>
+
+</div>

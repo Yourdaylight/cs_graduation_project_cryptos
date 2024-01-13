@@ -1,0 +1,17 @@
+<div class="news">
+<div class="news_container">
+<div class="banner">
+  <img src="assets/banner.jpg" alt="Banner image" />
+  <div class="news-text">NEWS</div>
+</div>
+  <div class="news-container">
+    <div class="card" *ngFor="let news of newsList; let i = index" (click)="navigateToCardDetails(news.id)" [attr.data-card-id]="news.id" [style.animation-delay]="i * 0.2 + 's'">
+      <div class="date">{{ news.date }}</div>
+      <div class="card-content">
+        <h2>{{ news.title }}</h2>
+        <p>{{ news.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

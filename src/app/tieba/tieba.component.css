@@ -1,0 +1,238 @@
+.news {
+  width: 100%;
+  min-height: 100%;
+  background-image: url('/assets/bk2.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.news_container {
+  display: flex;
+  width: 80%;
+  min-height: 85vh; /* 添加这个属性 */
+  margin: 0.5rem auto 1rem auto;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(45, 45, 45, 0.8);
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 2rem 2rem 2rem 2rem; /* 增加底部内边距 */
+}
+.banner {
+  position: relative;
+  width: 90%;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem; /* 增加这个属性以避免重叠 */
+}
+
+.news-text {
+  position: absolute;
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  transform:translate(-50%, -50%); /* 使文本在父元素中居中 */
+  background-color: rgba(0, 0, 0, 0.7); /* 添加半透明的黑色背景 */
+  padding: 20px; /* 为背景添加一些内边距，使其看起来更美观 */
+  border-radius: 10px; /* 使背景的边角变圆 */
+}
+.banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+}
+
+.search-box {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+}
+
+.search-box input {
+  width: 70%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  line-height: 2rem;
+}
+
+.search-box button {
+  margin-left: 1rem;
+  background-color: #0B513A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 8rem;
+}
+.uppost {
+  margin-left: 1rem;
+  background-color: #0B513A;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影 */
+  height: 3rem;
+}
+
+.uppost:hover {
+  background-color: #00DB00; /* 更改背景颜色 */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* 悬停时阴影变大 */
+  transform: translateY(-3px); /* 悬停时上移 */
+}
+
+.uppost:active {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* 按钮按下时阴影变小 */
+  transform: translateY(-1px); /* 按钮按下时上移较少 */
+}
+
+.search-box button:hover {
+  background-color: #00DB00;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.post-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #f0f3f4;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.post-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to bottom right, rgba(58, 123, 213, 0.1), rgba(58, 123, 213, 0.3));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.post-card:hover::before {
+  opacity: 1;
+}
+
+.new-post-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.new-post-modal h2 {
+  margin-bottom: 1rem;
+}
+
+.new-post-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-post-modal label {
+  margin-top: 0.5rem;
+}
+
+.new-post-modal input,
+.new-post-modal textarea {
+  margin-top: 0.25rem;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+.new-post-modal textarea[name="summary"] {
+  height: 4rem;
+}
+.new-post-modal textarea[name="content"] {
+  height: 6rem;
+}
+.new-post-modal .submit-button {
+  margin-top: 1rem;
+  background-color: #3a7bd5;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 4rem;
+}
+
+.new-post-modal .submit-button:hover {
+  background-color: #4b8dd6;
+}
+
+.close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.close-button:hover {
+  color: #555;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+

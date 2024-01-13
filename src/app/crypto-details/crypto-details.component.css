@@ -1,0 +1,135 @@
+:host {
+  user-select: none;
+}
+.news {
+  width: 100%;
+  min-height: 100%;
+  background-image: url('/assets/bk2.jpg');
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.news_container {
+  display: flex;
+  width: 80%;
+  min-height: 85vh; /* 添加这个属性 */
+  margin: 0.5rem auto 1rem auto;
+  align-items: center;
+  border-radius: 1rem;
+  background-color: rgba(45, 45, 45, 0.8);
+  flex-direction: column;
+  margin-top: 5rem;
+  padding: 2rem 2rem 2rem 2rem; /* 增加底部内边距 */
+}
+
+
+.crypto-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  color: #f0f0f0;
+  font-family: 'Roboto', sans-serif;
+  width: 80%;
+}
+
+.chart {
+  width: 80%;
+  height: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #ececec;
+  padding: 3rem;
+}
+
+.crypto-summary,
+.crypto-description {
+  width: 80%;
+  text-align: justify;
+  font-size: 1.1rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.crypto-summary h2,
+.crypto-description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.crypto-summary::before,
+.crypto-description::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  margin-bottom: 1rem;
+}
+
+.crypto-summary::after,
+.crypto-description::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #92fe9d, #00c9ff);
+  margin-top: 1rem;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.echarts-container {
+  display: flex;
+  width:90%;
+  justify-content: center;
+}
+.predict-button {
+  background-color: #3a7afe;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  outline: none;
+  padding: 12px 30px;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+  overflow: hidden;
+/*  鼠标hover移动上去后放大*/
+  transition: all 0.4s ease-in-out;
+}

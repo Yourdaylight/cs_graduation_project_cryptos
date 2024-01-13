@@ -1,0 +1,55 @@
+<div class="home-container">
+  <div class="starfield">
+    <div class="static"></div>
+    <div class="moving-1"></div>
+    <div class="moving-2"></div>
+    <div class="moving-3"></div>
+  </div>
+  <div *ngIf=loading class="cryptoboard">
+    <div class="echarts">
+      <div class="echarts_bk">
+        <div class="infos">
+          <div class="icons">
+            <img [src]="'assets/' + defaultName + '.png'" alt="{{defaultName}} icon" class="crypto-icon" />
+          </div>
+          <span >Highest Price in 24h: {{activeItem.high24h}}</span>
+          <span>Lowest Price in 24h: {{activeItem.low24h}}</span>
+          <button [routerLink]="['/crypto-details', activeItem.ccy]" class="details-button">Details</button>
+        </div>
+        <div class="echarts-container">
+          <div *ngIf="isLoadingData" class="loading-overlay">
+            <div class="loading-spinner"></div>
+          </div>
+          <echarts [options]="chartOption" class="chart" (chartInit)="onChartInit($event)"></echarts>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="crypto-list">
+      <div *ngFor="let item of cryptoData" class="crypto-item" (click)="updateChartTitle2(item)" [class.active]="item.ccy === defaultName">
+        <img [src]="'assets/' + item.ccy + '.png'" alt="{{item.ccy}} icon" />
+        <div class="crypto-name">{{item.ccy}}</div>
+        <div class="crypto-price">USD  {{item.last}}</div>
+        <div
+          [class]="'crypto-change ' + calculateChangeClass(item).className">{{calculateChangeClass(item).change}}</div>
+      </div>
+
+    </div>
+  </div>
+  <div *ngIf=!loading class="loading">
+    <svg viewBox="0 0 800 600">
+      <symbol id="s-text">
+        <text text-anchor="middle" x="50%" y="35%" class="text--line" >Loading</text>
+        <text text-anchor="middle" x="50%" y="68%" class="text--line">Dataset</text>
+      </symbol>
+      <g class="g-ants">
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+        <use xlink:href="#s-text" class="text-copy"></use>
+      </g>
+    </svg>
+  </div>
+</div>

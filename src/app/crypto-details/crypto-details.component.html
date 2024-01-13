@@ -1,0 +1,33 @@
+<div class="news">
+  <div class="news_container">
+
+    <div class="crypto-details">
+      <div class="echarts-container">
+        <div *ngIf="isLoadingData" class="loading-overlay">
+          <div class="loading-spinner"></div>
+
+          <div class="loading-text" style="color: #1a5a86">Loading data, please wait<br>( if you are predicting price it will takes about 15
+            seconds)...
+          </div>
+
+        </div>
+        <echarts [options]="chartOption" class="chart" (chartInit)="onChartInit($event)"></echarts>
+      </div>
+      <div *ngIf=this.data class="crypto-summary">
+        <h2>Summary</h2>
+        <p>The current price of {{ccy}} is {{data.last| number}} USD, with a 24-hour trading volume of {{data.vol| number}} USD. The price of {{ccy}}
+          has decreased by {{data.dayChangePercentage}}% in the past 24 hours. Currently, the market cap ranking of this cryptocurrency
+          is {{data.marketCapRank}}, with a real-time market cap of ${{data.marketCap| number}} and a circulating supply
+          of {{data.flowTotal| number}} {{ccy}}. We will update the {{ccy}}/USD price in real-time.</p>
+      </div>
+      <div *ngIf=this.cryptoDescription class="crypto-description">
+        <h2>Basic Knowledge of {{ ccy}}</h2>
+        <p>{{ cryptoDescription }}</p>
+      </div>
+      <!--      a button named predict-->
+      <div class="predict">
+        <button class="predict-button" (click)="predict()">Predict</button>
+      </div>
+    </div>
+  </div>
+</div>

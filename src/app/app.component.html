@@ -1,0 +1,161 @@
+<nav class="navs">
+  <div class="nav-brand" routerLink="/">
+    <img src="assets/logo.png" alt="Logo" class="nav-logo" />
+    <h1 class="nav-title">Crypto Database</h1>
+  </div>
+
+  <div class="nav-links">
+    <div class="menu-item"  (mouseenter)="showSubMenu('news')">
+      News
+    <div class="sub-menu" *ngIf="activeSubMenu === 'news'" (mouseleave)="hideSubMenu()">
+      <ul>
+        <li routerLink="/news">
+          <img src="assets/icons/n1.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Fork News</div>
+            <div class="menu-item-description">Discover a blockchain</div>
+          </div>
+        </li>
+        <li routerLink="/news">
+          <img src="assets/icons/n2.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Mining Updates</div>
+            <div class="menu-item-description">Covers crypto mining</div>
+          </div>
+        </li>
+        <li routerLink="/news">
+          <img src="assets/icons/n3.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Recommendation</div>
+            <div class="menu-item-description"> Offers advice on crypto</div>
+          </div>
+        </li>
+      </ul>
+    </div></div>
+    <div class="menu-item"  (mouseenter)="showSubMenu('forum')">Forum
+    <div class="sub-menu" *ngIf="activeSubMenu === 'forum'" (mouseleave)="hideSubMenu()">
+      <ul>
+        <li routerLink="/chat">
+          <img src="assets/icons/f1.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Investment</div>
+            <div class="menu-item-description"> Provide advice</div>
+          </div>
+        </li>
+        <li routerLink="/chat">
+          <img src="assets/icons/f2.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Technical</div>
+            <div class="menu-item-description">blockchain technology</div>
+          </div>
+        </li>
+        <li routerLink="/community">
+          <img src="assets/icons/f3.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Community</div>
+            <div class="menu-item-description">interactions with crypto</div>
+          </div>
+        </li>
+      </ul>
+    </div></div>
+    <div class="menu-item"  (mouseenter)="showSubMenu('market')">Market
+    <div class="sub-menu" *ngIf="activeSubMenu === 'market'" (mouseleave)="hideSubMenu()">
+      <ul>
+        <li routerLink="/crypto">
+          <img src="assets/icons/m1.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Price</div>
+            <div class="menu-item-description">real-time tracking  data</div>
+          </div>
+        </li>
+        <li routerLink="/crypto">
+          <img src="assets/icons/m2.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Market analysis</div>
+            <div class="menu-item-description"> Analysis & insights</div>
+          </div>
+        </li>
+        <li routerLink="/crypto">
+          <img src="assets/icons/m3.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Exchange review</div>
+            <div class="menu-item-description">Dealing platforms</div>
+          </div>
+        </li>
+      </ul>
+    </div></div>
+
+    <div *ngIf="!isLoggedIn" class="menu-item"  (click)="showlogin()" (mouseleave)="hideSubMenu()">
+      Login
+    </div>
+
+    <div *ngIf="isLoggedIn" class="menu-item"  (mouseenter)="showSubMenu('login')">
+      <img src="assets/icons/usr.png" class="customer-image" />
+    <div class="sub-menu" *ngIf="activeSubMenu === 'login'" (mouseleave)="hideSubMenu()">
+      <ul>
+        <li routerLink="/customer">
+          <img src="assets/icons/l1.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Profile</div>
+            <div class="menu-item-description">Customer information</div>
+          </div>
+        </li>
+        <li routerLink="/customer">
+          <img src="assets/icons/l2.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Favorite</div>
+            <div class="menu-item-description">Your collection</div>
+          </div>
+        </li>
+        <li (click)="logout()">
+          <img src="assets/icons/l3.png" class="menu-icon" />
+          <div class="menu-item-text">
+            <div class="menu-item-title">Logout</div>
+          </div>
+        </li>
+      </ul>
+    </div></div>
+  </div>
+
+
+</nav>
+<router-outlet></router-outlet>
+
+<div class="login-modal" *ngIf="(loginModalService.showModal$ | async)">
+  <div class="login-modal-content">
+    <div class="tab-container">
+      <div class="tab" (click)="switchTab('login')" [class.active]="activeTab === 'login'">Login</div>
+      <div class="tab" (click)="switchTab('register')" [class.active]="activeTab === 'register'">Register</div>
+    </div>
+    <form *ngIf="activeTab === 'login'" (ngSubmit)="login(email, password)" #loginForm="ngForm">
+      <div>
+        <label for="username">E-mail:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+      </div>
+      <div class="btcontainer">
+        <button type="submit" >Login</button>
+      </div>
+    </form>
+    <form *ngIf="activeTab === 'register'" (ngSubmit)="register(email.value, password.value)" #registerForm="ngForm">
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="emailModel" #email="ngModel">
+      </div>
+      <div>
+        <label for="logpassword">Password:</label>
+        <input type="password" id="logpassword" name="password" [(ngModel)]="passwordModel" #password="ngModel">
+      </div>
+      <div class="btcontainer">
+        <button type="submit">Register</button>
+      </div>
+    </form>
+
+    <button class="close-button" (click)="toggleLoginModal()">X</button>
+
+  </div>
+</div>
+

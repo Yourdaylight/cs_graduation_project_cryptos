@@ -1,0 +1,214 @@
+.navs{
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+}
+.menu-item {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  width: 5rem;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+ user-select: none;
+}
+.menu-item:hover {
+  color: #FF7F50;
+  transform: translateY(-0.2rem);
+}
+
+.sub-menu {
+  color: white;
+  position: absolute;
+  top: calc(100% + 2rem);
+  left:0;
+  background-color: #0B513A;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* 修改这行 */
+  width: 15rem;
+  border-bottom-left-radius: 10px; /* 添加这行 */
+  border-bottom-right-radius: 10px; /* 添加这行 */
+}
+
+.sub-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+}
+
+.sub-menu ul li {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+  /*min-height: 3rem; !* 修改这行以增加高度 *!*/
+}
+.sub-menu ul li:hover {
+ border: .1rem solid white;
+}
+
+.menu-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
+
+.menu-item-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.menu-item-description {
+  font-size: 0.8rem;
+  color: #FF7F50;
+}
+
+.menu-item:hover + .sub-menu,
+.sub-menu:hover {
+  display: block;
+}
+
+.customer-image {
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+}
+
+.login-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-modal-content {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 20rem;
+  height: 25rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.login-modal-content input[type="text"],
+.login-modal-content input[type="password"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.login-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.login-modal-content form {
+  display: flex;
+  gap: 1rem;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.login-modal-content label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.login-modal-content input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btcontainer{
+  display: flex;
+  justify-content: center;
+}
+
+.login-modal-content button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease-in-out;
+  width:50%;
+}
+
+.login-modal-content button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.close-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  position: absolute; /* 将定位方式更改为绝对定位 */
+  top: 0.5rem; /* 调整顶部距离 */
+  right: 0.5rem; /* 调整右侧距离 */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  background-color: #c73222;
+}
+
+.tab-container {
+  display: flex;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+  border-radius: 5px 5px 0 0;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: rgba(240, 240, 240, 0.3);
+  border: none;
+  color: #666;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.tab:hover {
+  background-color: #ececec;
+}
+
+.tab.active {
+  background-color: #f44336;
+  color: white;
+}

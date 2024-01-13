@@ -1,0 +1,25 @@
+<div class="news">
+  <div class="news_container">
+    <div *ngIf="post" class="post-details">
+      <h2 class="post-title">{{ post.title }}</h2>
+      <p class="post-date">{{ post.date | date: 'short' }}</p>
+      <p class="post-summary">{{ post.summary }}</p>
+      <img *ngIf="imageUrl" [src]="imageUrl" alt="Random themed image" />
+      <p class="post-content">{{ post.content }}</p>
+
+      <p>Likes: {{ post.likes }} <span class="like-emoji" (click)="increaseLikes()">👍</span></p>
+
+      <p class="post-comments-title">Comments:</p>
+      <ul class="post-comments">
+        <li *ngFor="let comment of post.comments" [ngStyle]="{'color': getRandomLightColor()}">
+          <span class="username">{{ comment.username }}</span>: {{ comment.comment }}
+        </li>
+      </ul>
+
+      <div class="comment-form">
+        <input id="new-comment" [(ngModel)]="newComment" placeholder="Write your comment here..." />
+        <button (click)="addComment()">Yell</button>
+      </div>
+    </div>
+  </div>
+</div>

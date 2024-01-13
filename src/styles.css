@@ -1,0 +1,52 @@
+/* 导航栏基本样式 */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0B513A;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  /* 添加悬浮效果 */
+  box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 1000;
+}
+
+/* 导航栏 logo 和 title 样式 */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  margin-left: -10rem;
+  cursor: pointer;
+}
+
+.nav-logo {
+  width: 40px;
+  height: auto;
+  margin-right: 1rem;
+  margin-left: 3rem;
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+}
+
+/* 导航链接样式 */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+.nav-links a:hover {
+  color: gold;
+  transition: color 0.3s;
+}
+body {
+  display: block;
+  margin: 0;
+  background-color: #fff;
+}

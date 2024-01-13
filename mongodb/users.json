@@ -1,0 +1,5 @@
+{"_id":{"$oid":"64423fc13ac99180ebc3ee32"},"usr":"admin","pwd":"admin"}
+{"_id":{"$oid":"644244cb512bc8fc023e6961"},"usr":"111","pwd":{"$binary":{"base64":"JDJiJDEyJHp3UEVsSVV5c1NJcWwuMzIyU3FPWGUvYW11L2dOQXlXeDhPZVBmdGRsd29OU3VxSTdhaEV1","subType":"00"}}}
+{"_id":{"$oid":"64424a5c512bc8fc023e6962"},"usr":"112","pwd":{"$binary":{"base64":"JDJiJDEyJDVVZk1Dc21DTndHaGo0TGFCMW55RXVrWTMya1NJLk83a2pJTjU4UGdscTdyeEZ4QnVzb1BH","subType":"00"}}}
+{"_id":{"$oid":"64424b36512bc8fc023e6963"},"usr":"1111","pwd":{"$binary":{"base64":"JDJiJDEyJHA5aTc1enVyNktBMTFwdVJoTHFoY09LcWZuUVlVVnVyRFlCekkwRS5GejJqZUkuOTd1OG5l","subType":"00"}}}
+{"_id":{"$oid":"644284fa512bc8fc023e6964"},"usr":"123","pwd":{"$binary":{"base64":"JDJiJDEyJFlubXMzdTVYRE0yN1RoanN4NTVsVU9zTWZLcUlySGMzajRJNWRlRmF5Zk00VDR2bVhmcGxt","subType":"00"}}}

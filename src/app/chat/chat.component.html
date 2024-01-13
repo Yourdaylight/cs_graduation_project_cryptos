@@ -1,0 +1,19 @@
+<div class="news">
+  <div class="news_container">
+    <h1 class="rainbow-title">Join The Community And Share Your Opinion!</h1>
+    <div class="chat-container">
+      <div class="chat-messages">
+        <div *ngFor="let message of messages" class="message" [ngClass]="{'user-message': message.isUser}">
+          <span class="username">{{message.user}}:</span>
+          <div class="bubble">
+            <span>{{message.content}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-container">
+        <input [(ngModel)]="userMessage" class="chat-input" type="text" placeholder="Type your message here...">
+        <button (click)="sendMessage()" class="send-button">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
